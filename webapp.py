@@ -28,4 +28,6 @@ def state_Fact(state, counties):
      for c in counties:
             if state == c['state']:
                 total = total + c['Population']['2014 Population']
+     {{ fact block }}"The total number of people living in this state in 2014 was " + total + " people."{{ end Block }}
      return "The total number of people living in this state in 2014 was " + total + " people."
+    

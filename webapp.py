@@ -22,5 +22,10 @@ def get_state_options(counties):
             options += Markup("<option value=\"" + s + "\">" + s + "</option>")
             curState = state["State"]
     return options
-def Markup(str):
     
+def state_Fact(state, counties):
+    total = 0
+     for c in counties:
+            if state == c['state']:
+                total = total + c['Population']['2014 Population']
+     return "The total number of people living in this state in 2014 was " + total + " people."

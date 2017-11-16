@@ -22,10 +22,10 @@ def get_state_options():
             counties = json.load(demographics_data)
         options = ""
         state = ""
-            for c in counties:
-             if not c["State"] == state:
-                options += Markup("<option value=\"" + c["State"] + "\">" + c["State"] + "</option>")
-            state = c["State"]
+            for x in counties:
+             if  x["State"] != state:
+                options += Markup("<option value=\"" + x["State"] + "\">" + x["State"] + "</option>")
+            state = x["State"]
     return render_template('index.html', stateBlock = options)
 
 def state_Fact(state, counties):

@@ -21,12 +21,14 @@ def get_state_options(counties):
 
 @app.route("/")
 def render_main():
-    return render_template('index.html', stateBlock = get_state_options(), stateFact = state_Fact())
+    #return render_template('index.html', stateBlock = get_state_options(), stateFact = state_Fact())
+    return render_template('index.html', stateBlock = get_state_options())
     
-def state_Fact(state, counties):
+"""def state_Fact(state, counties):
     total = 0
      for c in counties:
             if state == c['state']:
                 total = total + c['Population']['2014 Population']
      return "The total number of people living in this state in 2014 was " + total + " people."
+     """
     

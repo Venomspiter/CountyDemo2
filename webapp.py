@@ -16,12 +16,12 @@ def get_state_options(counties):
             s = state["State"]
             options += Markup("<option value=\"" + s + "\">" + s + "</option>")
             curState = state["State"]
-    return options
+    return render_template('index.html', stateBlock = options())
 
 @app.route("/")
 def render_main():
     #return render_template('index.html', stateBlock = get_state_options(), stateFact = state_Fact())
-    return render_template('index.html', stateBlock = get_state_options())
+    return get_state_options()
     
 """def state_Fact(state, counties):
     total = 0

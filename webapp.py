@@ -12,8 +12,8 @@ def render_main():
     
 @app.route("/app")
 def render_fact():
-        state = request.args['options']
-         counties = json.load(demographics_data)
+    state = request.args['options']
+    counties = json.load(demographics_data)
     return render_template('index.html', stateFact =  state_Fact(state, counties), option = get_state_options())
     
 

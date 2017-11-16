@@ -28,13 +28,12 @@ def get_state_options():
             state = c["State"]
     return render_template('index.html', stateBlock = options)
 
-"""def state_Fact(state, counties):
+def state_Fact(state, counties):
     total = 0
      for c in counties:
             if state == c['state']:
                 total = total + c['Population']['2014 Population']
      return "The total number of people living in this state in 2014 was " + total + " people."
-     """
 if __name__== '__main__':
     main()
     app.run(debug=False, port=54321)

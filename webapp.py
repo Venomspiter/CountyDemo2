@@ -19,11 +19,11 @@ def get_state_options():
             counties = json.load(demographics_data)
         options = ""
         state = ""
-            for x in counties:
-             if  x["State"] != state:
+        for x in counties:
+            if  x["State"] != state:
                 options += Markup("<option value=\"" + x["State"] + "\">" + x["State"] + "</option>")
-            state = x["State"]
-    return render_template('index.html', stateBlock = options)
+                state = x["State"]
+        return render_template('index.html', stateBlock = options)
 
 @app.route("/")
 def render_main():

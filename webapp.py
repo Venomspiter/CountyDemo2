@@ -1,9 +1,8 @@
 from flask import Flask, request, Markup, render_template, flash, Markup
 import os
 import json
-if __name__== '__main__':
-    main()
-    app.run(debug=False, port=54321)
+
+app = Flask(__name__)
         
 def main():
     with open('county_demographics.json') as demographics_data:
@@ -32,3 +31,6 @@ def render_main():
      return "The total number of people living in this state in 2014 was " + total + " people."
      """
     
+if __name__== '__main__':
+    main()
+    app.run(debug=False, port=54321)

@@ -5,9 +5,6 @@ import json
 
 app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  Otherwise, it is the name of the file (ex. webapp)
 
-@app.route("/")
-def render_main():
-    return get_state_options()
 
     
 @app.route("/app")
@@ -27,6 +24,10 @@ def get_state_options():
                 options += Markup("<option value=\"" + x["State"] + "\">" + x["State"] + "</option>")
             state = x["State"]
     return render_template('index.html', stateBlock = options)
+
+@app.route("/")
+def render_main():
+    return get_state_options()
 
 def state_Fact(state, counties):
     total = 0

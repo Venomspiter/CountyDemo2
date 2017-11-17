@@ -29,7 +29,7 @@ def state_Fact(state):
             counties = json.load(demographics_data)
     total = 0
     for c in counties:
-        if state == c['state']:
+        if state == c['State']:
             total = total + c['Population']['2014 Population']
     return MarkUp( "The total number of people living in this state in 2014 was " + total + " people.")
 if __name__== '__main__':

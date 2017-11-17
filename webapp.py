@@ -6,8 +6,7 @@ app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  
 @app.route("/app")
 def render_fact():
     state = request.args['options']
-    counties = json.load(demographics_data)
-    return render_template('index.html', stateFact =  state_Fact(state, counties), option = get_state_options())
+    return render_template('index.html', stateFact =  state_Fact(state), option = get_state_options())
     
 
 def get_state_options():
@@ -25,7 +24,9 @@ def get_state_options():
 def render_main():
     return get_state_options()
 
-def state_Fact(state, counties):
+def state_Fact(state):
+    with open('county_demographics.json') as demographics_data:
+            counties = json.load(demographics_data)
     total = 0
     for c in counties:
         if state == c['state']:

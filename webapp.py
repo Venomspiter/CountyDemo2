@@ -19,7 +19,7 @@ def get_state_options():
             if  x["State"] != state:
                 options += Markup("<option value=\"" + x["State"] + "\">" + x["State"] + "</option>")
                 state = x["State"]
-        return render_template('index.html', stateBlock = options)
+        return render_template('index.html', option = options)
 
 @app.route("/")
 def render_main():

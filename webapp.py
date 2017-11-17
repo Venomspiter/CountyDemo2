@@ -31,7 +31,7 @@ def state_Fact(state):
     for c in counties:
         if state == c['State']:
             total = total + c['Population']['2014 Population']
-    return MarkUp( "The total number of people living in this state in 2014 was " + total + " people.")
+    return "The total number of people living in this state in 2014 was " + total + " people."
 if __name__== '__main__':
     main()
     app.run(debug=False, port=54321)
